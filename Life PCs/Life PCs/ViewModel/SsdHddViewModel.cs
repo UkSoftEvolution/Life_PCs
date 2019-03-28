@@ -12,6 +12,9 @@ namespace Life_PCs.ViewModel
         #region Fields
         private Phisical phisical; //Объект класса для работы с SSD и HDD устройствами
         private ObservableCollection<Disk> disks; //Коллекция локальных дисков
+        private double allTotalOccupiedSpace; //Всего занято памяти
+        private double allTotalSize; //Всего памяти
+        private int allPercent; //Проценты занятой памяти
         #endregion
 
         #region Constructors
@@ -21,7 +24,11 @@ namespace Life_PCs.ViewModel
         public SsdHddViewModel()
         {
             phisical = new Phisical();
-            Disks = new ObservableCollection<Disk>(phisical.Refresh());
+            var DiskInfo = phisical.Refresh();
+            Disks = new ObservableCollection<Disk>(DiskInfo.Item1);
+            AllTotalOccupiedSpace = DiskInfo.Item2;
+            AllTotalSize = DiskInfo.Item3;
+            AllPercent = DiskInfo.Item4;
         }
         #endregion
 
@@ -36,6 +43,42 @@ namespace Life_PCs.ViewModel
             {
                 disks = value;
                 OnPropertyChanged(nameof(disks));
+            }
+        }
+        /// <summary>
+        /// Всего занято памяти
+        /// </summary>
+        public double AllTotalOccupiedSpace
+        {
+            get => allTotalOccupiedSpace;
+            set
+            {
+                allTotalOccupiedSpace = value;
+                OnPropertyChanged(nameof(allTotalOccupiedSpace));
+            }
+        }
+        /// <summary>
+        /// Всего памяти
+        /// </summary>
+        public double AllTotalSize
+        {
+            get => allTotalSize;
+            set
+            {
+                allTotalSize = value;
+                OnPropertyChanged(nameof(allTotalSize));
+            }
+        }
+        /// <summary>
+        /// Проценты занятой памяти
+        /// </summary>
+        public int AllPercent
+        {
+            get => allPercent;
+            set
+            {
+                allPercent = value;
+                OnPropertyChanged(nameof(allPercent));
             }
         }
         #endregion

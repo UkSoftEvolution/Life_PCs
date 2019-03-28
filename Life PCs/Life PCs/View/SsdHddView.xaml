@@ -43,7 +43,7 @@
                                 </Grid>
 
                                 <Grid Grid.Column="1">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                         <TextBlock
                                             Text="{Binding Path=TotalOccupiedSpace, StringFormat={}{0:00.0} ГБ}"
                                             Margin="0,3,0,0"
@@ -76,61 +76,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            
-            <!--<StackPanel  Margin="0,5,0,0" DataContext="{Binding Disks}">
-                <Grid Background="{StaticResource Colors.Background.Second}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="2"/>
-                    </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0">
-                            <TextBlock
-                                Text="{Binding Path=Name, StringFormat=Локальный диск {0}}"
-                                Margin="5,3,0,0"
-                                Foreground="{StaticResource Font.Static.Foreground}"
-                                FontFamily="{StaticResource Fonts.BaseFont}"
-                                FontSize="18"/>
-                        </Grid>
-
-                        <Grid Grid.Column="1">
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
-                                <TextBlock
-                                    Text="{Binding Path=TotalOccupiedSpace, StringFormat={}{0} ГБ}"
-                                    Margin="0,3,0,0"
-                                    Foreground="{StaticResource Font.Static.Foreground}"
-                                    FontFamily="{StaticResource Fonts.BaseFont}"
-                                    FontSize="15"/>
-                                <TextBlock
-                                    Text="{Binding Path=TotalSize, StringFormat=/{0} ГБ}"
-                                    Margin="0,3,15,0"
-                                    Foreground="{StaticResource Font.Static.Foreground}"
-                                    FontFamily="{StaticResource Fonts.BaseFont}"
-                                    FontSize="15"/>
-                                <TextBlock
-                                    Text="80%"
-                                    Margin="0,3,3,0"
-                                    Foreground="{StaticResource Font.Static.Foreground}"
-                                    FontFamily="{StaticResource Fonts.BaseFont}"
-                                    FontSize="18"/>
-                            </StackPanel>
-                        </Grid>
-                    </Grid>
-
-                    <Grid Grid.Row="1">
-                        <ProgressBar
-                            Background="{x:Null}"
-                            BorderThickness="0"
-                            Value="50"/>
-                    </Grid>
-                </Grid>
-            </StackPanel>-->
         </Grid>
 
         <Grid Grid.Row="1">
@@ -140,18 +85,47 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Margin="3,0,0,0">
-                <TextBlock
-                    Text="Физическая память"
-                    Foreground="{StaticResource Font.Static.Foreground}"
-                    FontFamily="{StaticResource Fonts.BaseFont}"
-                    FontSize="14"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <TextBlock
+                        Text="Всего памяти"
+                        Foreground="{StaticResource Font.Static.Foreground}"
+                        FontFamily="{StaticResource Fonts.BaseFont}"
+                        FontSize="14"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock
+                            Text="{Binding AllTotalOccupiedSpace, StringFormat={}{0:00.0} ГБ}"
+                            Margin="0,3,0,0"
+                            Foreground="{StaticResource Font.Static.Foreground}"
+                            FontFamily="{StaticResource Fonts.BaseFont}"
+                            FontSize="11"/>
+                        <TextBlock
+                            Text="{Binding AllTotalSize, StringFormat=/{0:00.0} ГБ}"
+                            Margin="0,3,15,0"
+                            Foreground="{StaticResource Font.Static.Foreground}"
+                            FontFamily="{StaticResource Fonts.BaseFont}"
+                            FontSize="11"/>
+                        <TextBlock
+                            Text="{Binding AllPercent, StringFormat={}{0}%}"
+                            Margin="0,3,3,0"
+                            Foreground="{StaticResource Font.Static.Foreground}"
+                            FontFamily="{StaticResource Fonts.BaseFont}"
+                            FontSize="14"/>
+                    </StackPanel>
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="1">
                 <ProgressBar
                     Background="{x:Null}"
                     BorderThickness="0"
-                    Value="50"/>
+                    Value="{Binding AllPercent}"/>
             </Grid>
         </Grid>
     </Grid>
