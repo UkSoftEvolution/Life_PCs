@@ -33,21 +33,23 @@ namespace Life_PCs.Memory
                     AllOccupied += drive.TotalSize - drive.TotalFreeSpace;
                     AllTotal += drive.TotalSize;
 
-                    double TotalOccupiedSpace = (drive.TotalSize - drive.TotalFreeSpace) / 1024.0 / 1024.0 / 1024.0;
-                    double TotalSize = drive.TotalSize / 1024.0 / 1024.0 / 1024.0;
                     int Percent = (int)((drive.TotalSize - drive.TotalFreeSpace) * 100 / drive.TotalSize);
-                    disks.Add(new Disk(drive.Name, TotalOccupiedSpace, Percent, TotalSize));
+                    disks.Add(new Disk(drive.Name, ConvertToGB((drive.TotalSize - drive.TotalFreeSpace)), Percent, ConvertToGB(drive.TotalSize)));
                 }
                 else
                     continue;
             }
 
-            double AllTotalOccupiedSpace = AllOccupied / 1024.0 / 1024.0 / 1024.0;
-            double AllTotalSize = AllTotal / 1024.0 / 1024.0 / 1024.0;
             int AllPercent = (int)(AllOccupied * 100 / AllTotal);
 
-            return (disks, AllTotalOccupiedSpace, AllTotalSize, AllPercent);
+            return (disks, ConvertToGB(AllOccupied), ConvertToGB(AllTotal), AllPercent);
         }
+        /// <summary>
+        /// Функция для конвертирования байтов в гигабайты
+        /// </summary>
+        /// <param name="ConvertValue">Значение которое нужно конвертировать</param>
+        /// <returns>Значение в гигабайтах</returns>
+        private double ConvertToGB(long ConvertValue) => ConvertValue / 1024.0 / 1024.0 / 1024.0;
         #endregion
     }
 }
