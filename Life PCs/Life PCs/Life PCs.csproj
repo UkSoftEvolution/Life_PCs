@@ -122,6 +122,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Life PCs.Memory\Life PCs.Memory.csproj">
+      <Project>{e03e485f-732d-4196-b0a3-20d4edf83601}</Project>
+      <Name>Life PCs.Memory</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Life_PCs.Model;
 using Life_PCs.Other;
+using Life_PCs.View;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
@@ -26,7 +27,7 @@ namespace Life_PCs.ViewModel
             {
                 new PageModel() { PageName = "CPU", Enabled = true },
                 new PageModel() { PageName = "RAM", Enabled = true },
-                new PageModel() { PageName = "SSD/HDD", Enabled = true },
+                new PageModel() { PageUri = new SsdHddView() { DataContext = new SsdHddViewModel() }, PageName = "SSD/HDD", Enabled = true },
                 new PageModel() { PageName = "Батарея", Enabled = true },
                 new PageModel() { PageName = "Другое", Enabled = true }
             };

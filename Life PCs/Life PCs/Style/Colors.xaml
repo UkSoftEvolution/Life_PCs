@@ -3,6 +3,7 @@
 
     <SolidColorBrush x:Key="Colors.Background" Color="#FF0E1621"/>
     <SolidColorBrush x:Key="Colors.Background.Second" Color="#FF17212B"/>
+    <SolidColorBrush x:Key="Colors.Background.Thrid" Color="#FF232E3C"/>
 
     <SolidColorBrush x:Key="Button.Static.Background" Color="#FF17212B"/>
     <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF202B36"/>

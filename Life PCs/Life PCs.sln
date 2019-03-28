@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Life PCs", "Life PCs\Life PCs.csproj", "{4A2C2D41-3C06-41AA-BE08-B058EBC91A5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Life PCs.Memory", "..\Life PCs.Memory\Life PCs.Memory.csproj", "{E03E485F-732D-4196-B0A3-20D4EDF83601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4A2C2D41-3C06-41AA-BE08-B058EBC91A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2C2D41-3C06-41AA-BE08-B058EBC91A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A2C2D41-3C06-41AA-BE08-B058EBC91A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03E485F-732D-4196-B0A3-20D4EDF83601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03E485F-732D-4196-B0A3-20D4EDF83601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03E485F-732D-4196-B0A3-20D4EDF83601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03E485F-732D-4196-B0A3-20D4EDF83601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
